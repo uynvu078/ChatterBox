@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/ChatterBox/static/css/main.0347bebd.css",
-    "main.js": "/ChatterBox/static/js/main.c881f683.js",
+    "main.css": "/ChatterBox/static/css/main.9d075ad7.css",
+    "main.js": "/ChatterBox/static/js/main.a795b720.js",
     "static/js/801.10c49235.chunk.js": "/ChatterBox/static/js/801.10c49235.chunk.js",
     "static/js/535.0608d08d.chunk.js": "/ChatterBox/static/js/535.0608d08d.chunk.js",
     "static/media/stream-chat-icons.eot": "/ChatterBox/static/media/stream-chat-icons.23ed7e178123c3011bdb.eot",
@@ -9,13 +9,13 @@
     "static/media/stream-chat-icons.woff": "/ChatterBox/static/media/stream-chat-icons.e5d9e7208067db143a74.woff",
     "static/media/stream-chat-icons.svg": "/ChatterBox/static/media/stream-chat-icons.c76e825baeee72b2e71d.svg",
     "index.html": "/ChatterBox/index.html",
-    "main.0347bebd.css.map": "/ChatterBox/static/css/main.0347bebd.css.map",
-    "main.c881f683.js.map": "/ChatterBox/static/js/main.c881f683.js.map",
+    "main.9d075ad7.css.map": "/ChatterBox/static/css/main.9d075ad7.css.map",
+    "main.a795b720.js.map": "/ChatterBox/static/js/main.a795b720.js.map",
     "801.10c49235.chunk.js.map": "/ChatterBox/static/js/801.10c49235.chunk.js.map",
     "535.0608d08d.chunk.js.map": "/ChatterBox/static/js/535.0608d08d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.0347bebd.css",
-    "static/js/main.c881f683.js"
+    "static/css/main.9d075ad7.css",
+    "static/js/main.a795b720.js"
   ]
 }
