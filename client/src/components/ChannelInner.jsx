@@ -80,15 +80,57 @@ const TeamChannelHeader = ({ setIsEditing }) => {
       if (watchers === 1) return '1 user online';
       return `${watchers} users online`;
     };
-  
+
+    const handleLeaveChannel = async () => {
+      const confirmed = window.confirm("Are you sure you want to leave this channel?");
+      if (!confirmed) return;
+    
+      try {
+        await channel.removeMembers([client.userID]);
+        window.location.reload(); // or redirect to another channel
+      } catch (err) {
+        console.error("Failed to leave channel", err);
+        alert("Unable to leave the channel.");
+      }
+    };
+    
+    const handleDeleteChannel = async () => {
+      const isDM = channel.type === 'messaging';
+      const confirmMessage = isDM
+        ? "This will permanently delete this direct message for everyone. Are you sure?"
+        : "This will permanently delete this channel. Are you sure you want to continue?";
+    
+      const confirmed = window.confirm(confirmMessage);
+      if (!confirmed) return;
+    
+      try {
+        await channel.delete();
+        window.location.reload(); // or redirect to another channel
+      } catch (err) {
+        console.error("Failed to delete channel", err);
+        alert("Unable to delete the channel.");
+      }
+    };
+    
     return (
       <div className='team-channel-header__container'>
         <MessagingHeader />
         <div className='team-channel-header__right'>
           <p className='team-channel-header__right-text'>{getWatcherText(watcher_count)}</p>
+          <div className='team-channel-header__actions'>
+            {channel.type === 'messaging' ? (
+              <button onClick={handleDeleteChannel}>Delete Chat</button>
+            ) : (
+              client.userID === channel.data?.created_by?.id ? (
+                <button onClick={handleDeleteChannel}>Delete Channel</button>
+              ) : (
+                <button onClick={handleLeaveChannel}>Leave Channel</button>
+              )
+            )}
+          </div>
         </div>
       </div>
-    );
+    );    
   };
 
   export default ChannelInner;
