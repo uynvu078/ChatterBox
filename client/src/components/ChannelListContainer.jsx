@@ -3,7 +3,7 @@ import { ChannelList, useChatContext } from 'stream-chat-react'
 import { ChannelSearch, TeamChannelList, TeamChannelPreview } from './';
 
 import Cookies from 'universal-cookie'
-import HospitalIcon from '../assets/hospital.png'
+import AppIcon from '../assets/chat.png'
 import LogoutIcon from '../assets/logout.png'
 
 const cookies = new Cookies();
@@ -11,7 +11,7 @@ const cookies = new Cookies();
 const SideBar = ({ logout, setToggleContainer }) => (
   <div className="channel-list__topbar">
     <div className="topbar-icons">
-      <img src={HospitalIcon} alt="Hospital" className="topbar-icon" />
+      <img src={AppIcon} alt="App" className="topbar-icon" />
       <img src={LogoutIcon} alt="Logout" className="topbar-icon" onClick={logout} />
     </div>
     <button className="menu-button" onClick={() => setToggleContainer((prev) => !prev)}>
