@@ -31,9 +31,19 @@ const Auth = () => {
 
         const URL = `${process.env.REACT_APP_API_URL}/auth`;
 
-        const { data: { token, userId, hashedPassword, fullName } } = await axios.post(`${URL}/${isSignup ? 'signup' : 'login'}`, {
-            username, password, fullName: form.fullName, phoneNumber, avatarURL,
-        });
+        const { data: { token, userId, hashedPassword, fullName } } = await axios.post(
+            `${URL}/${isSignup ? 'signup' : 'login'}`,
+            {
+              username,
+              password,
+              fullName: form.fullName,
+              phoneNumber,
+              avatarURL,
+            },
+            {
+              withCredentials: true,
+            }
+        );
 
         cookies.set('token', token);
         cookies.set('username', username);

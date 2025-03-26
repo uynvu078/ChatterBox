@@ -39,14 +39,6 @@ const App = () => {
   return (
     <div className="app__wrapper">
       <Chat client={client} theme="team light">
-        
-      <button
-        className="menu-button"
-        onClick={() => setToggleContainer((prev) => !prev)}
-      >
-        ☰
-      </button>
-
 
         {/* Desktop Sidebar */}
         <div className="channel-list__container">
@@ -65,6 +57,7 @@ const App = () => {
           isEditing={isEditing}
           setIsEditing={setIsEditing}
           createType={createType}
+          setToggleContainer={setToggleContainer}
         />
 
         {/* Mobile Sidebar */}

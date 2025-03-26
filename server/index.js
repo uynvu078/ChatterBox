@@ -8,8 +8,24 @@ const PORT = process.env.PORT || 5000;
 
 require('dotenv').config();
 
+// app.use(cors({
+//     origin: 'https://uynvu078.github.io',
+//     credentials: true,
+// }));
+
+const allowedOrigins = [
+    'http://localhost:3000',
+    'https://uynvu078.github.io',
+];
+  
 app.use(cors({
-    origin: 'https://uynvu078.github.io',
+    origin: function (origin, callback) {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error('Not allowed by CORS'));
+      }
+    },
     credentials: true,
 }));
 

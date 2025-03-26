@@ -14,8 +14,8 @@ const SideBar = ({ logout, setToggleContainer }) => (
       <img src={AppIcon} alt="App" className="topbar-icon" />
       <img src={LogoutIcon} alt="Logout" className="topbar-icon" onClick={logout} />
     </div>
-    <button className="menu-button" onClick={() => setToggleContainer((prev) => !prev)}>
-      ☰
+    <button className="menu-button sidebar-button" onClick={() => setToggleContainer((prev) => !prev)}>
+      ⇤
     </button>
   </div>
 );

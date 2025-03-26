@@ -450,6 +450,7 @@
   }
 }
 
+/* ------------------------------------------------------------------- */
 /* HAMBURGER BUTTON (Mobile only) */
 @media screen and (max-width: 800px) {
   .menu-button {
@@ -457,9 +458,6 @@
     align-items: center;
     justify-content: center;
     background-color: transparent;
-    position: absolute;
-    top: 20px;
-    right: 15px;
     padding: 5px 10px;
     font-size: 22px;
     color: black;
@@ -471,6 +469,11 @@
   .menu-button:hover {
     background-color: rgba(255, 255, 255, 0.1);
     transform: scale(1.05);
+  }
+  .sidebar-button {
+    position: absolute;
+    top: 20px;
+    right: 15px;
   }
 }
 
@@ -505,6 +508,6 @@
   }
 
   .menu-button {
-    display: none; /* hide hamburger on desktop */
+    display: none;
   }
 }

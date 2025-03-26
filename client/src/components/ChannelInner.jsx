@@ -5,7 +5,7 @@ import { ChannelInfo } from '../assets';
 
 export const GiphyContext = React.createContext({});
 
-const ChannelInner = ({ setIsEditing }) => {
+const ChannelInner = ({ setIsEditing, setToggleContainer }) => {
   const [giphyState, setGiphyState] = useState(false);
   const { sendMessage } = useChannelActionContext();
   
@@ -32,7 +32,7 @@ const ChannelInner = ({ setIsEditing }) => {
     <GiphyContext.Provider value={{ giphyState, setGiphyState }}>
       <div style={{ display: 'flex', width: '100%' }}>
         <Window>
-          <TeamChannelHeader setIsEditing={setIsEditing} />
+          <TeamChannelHeader setIsEditing={setIsEditing} setToggleContainer={setToggleContainer} />
           <MessageList />
           <MessageInput overrideSubmitHandler={overrideSubmitHandler} />
         </Window>
@@ -42,7 +42,7 @@ const ChannelInner = ({ setIsEditing }) => {
   );
 };
 
-const TeamChannelHeader = ({ setIsEditing }) => {
+const TeamChannelHeader = ({ setIsEditing, setToggleContainer }) => {
     const { channel, watcher_count } = useChannelStateContext();
     const { client } = useChatContext();
   
@@ -114,7 +114,13 @@ const TeamChannelHeader = ({ setIsEditing }) => {
     
     return (
       <div className='team-channel-header__container'>
-        <MessagingHeader />
+        <div className='team-channel-header__left'>
+          <button className="menu-button topbar-button" onClick={() => setToggleContainer?.(prev => !prev)}>
+            ⇥
+          </button>
+          <MessagingHeader />
+        </div>
+
         <div className='team-channel-header__right'>
           <p className='team-channel-header__right-text'>{getWatcherText(watcher_count)}</p>
           <div className='team-channel-header__actions'>
